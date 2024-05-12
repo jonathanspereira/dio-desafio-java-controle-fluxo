@@ -1,12 +1,11 @@
-package numeroContadorFluxo;
 import java.util.Scanner;
 
 public class Contador {
-    public static void main (String[] args) throws Exception{
+    public static void main (String[] args){
 
         Scanner terminal = new Scanner(System.in);
 
-        System.out.println("- Digite o primeiro parâmetro: ");
+        System.out.println("\n- Digite o primeiro parâmetro: ");
           int parametroUm = terminal.nextInt();
         System.out.println("- Digite o segundo parâmetro: ");
           int parametroDois = terminal.nextInt();
@@ -18,9 +17,10 @@ public class Contador {
 
         }catch (ParametrosInvalidosException exception) {
             //lançando exceção
-            System.out.println("\n##ERRO: O segundo parâmetro deve ser maior que o primeiro!");
+            System.out.println("\n##ERRO: O segundo parâmetro deve ser maior que o primeiro!\n");
         }
 
+        terminal.close();
     }
     static void contar(int parametroUm, int parametroDois ) throws ParametrosInvalidosException {
 
@@ -30,12 +30,16 @@ public class Contador {
         } else {
             int contagem = parametroDois - parametroUm;
 
+            System.out.println("\nImprimindo contagem...");
+
             //realizar o for para imprimir os números com base na variável contagem
             for(int i = 0; i <= contagem; i++) {
-                System.out.println("Número: " + i);
+            
+                System.out.println("- número: " + i);
             }
 
         }
 
     }
+
 }
